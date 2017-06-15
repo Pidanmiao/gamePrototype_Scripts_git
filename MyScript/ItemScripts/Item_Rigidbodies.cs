@@ -11,9 +11,14 @@ public class Item_Rigidbodies : MonoBehaviour
     private void OnEnable()
     {
         SetInitialReferences();
-        CheckIfStartsInInventory();
+        
         itemMaster.EventObjectThrow += SetIsKinematicToFalse;
         itemMaster.EventObjectPickup += SetIsKinematicToTrue;
+    }
+
+    private void Start()
+    {
+        CheckIfStartsInInventory();
     }
 
     private void OnDisable()
