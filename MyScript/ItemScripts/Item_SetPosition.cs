@@ -10,18 +10,13 @@ public class Item_SetPosition : MonoBehaviour {
     private void OnEnable()
     {
         SetInitialReferences();
-        
+        SetPositionOnLayer();
         itemMaster.EventObjectPickup += SetPositionOnLayer;
     }
 
     private void OnDisable()
     {
         itemMaster.EventObjectPickup -= SetPositionOnLayer;
-    }
-
-    private void Start()
-    {
-        SetPositionOnLayer();
     }
 
     void SetInitialReferences()

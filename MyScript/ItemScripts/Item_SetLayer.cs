@@ -11,7 +11,7 @@ public class Item_SetLayer : MonoBehaviour {
     private void OnEnable()
     {
         SetInitialReferences();
-        
+        SetLayerOnEnable();
 
         itemMaster.EventObjectPickup += SetItemToPickupLayer;
         itemMaster.EventObjectThrow += SetItemToThrowLayer;
@@ -21,11 +21,6 @@ public class Item_SetLayer : MonoBehaviour {
     {
         itemMaster.EventObjectPickup -= SetItemToPickupLayer;
         itemMaster.EventObjectThrow -= SetItemToThrowLayer;
-    }
-
-    private void Start()
-    {
-        SetLayerOnEnable();
     }
 
     void SetInitialReferences()

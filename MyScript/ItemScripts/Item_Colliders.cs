@@ -11,14 +11,9 @@ public class Item_Colliders : MonoBehaviour {
     private void OnEnable()
     {
         SetInitialReferences();
-        
+        CheckIfStartsInInventory();
         itemMaster.EventObjectPickup += DisableColliders;
         itemMaster.EventObjectThrow += EnableColliders;
-    }
-
-    private void Start()
-    {
-        CheckIfStartsInInventory();
     }
 
     private void OnDisable()
